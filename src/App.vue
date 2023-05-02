@@ -1,7 +1,6 @@
 <script>
 import Header from './components/myHeader.vue';
 import Main from './components/Main-wrapper.vue';
-import Footer from './components/myFooter.vue';
 import axios from 'axios';
 import {store} from './data/store';
 
@@ -10,7 +9,6 @@ export default {
   components: {
     Header,
     Main,
-    Footer,
   },
   methods:{
     getApi(){
@@ -30,7 +28,6 @@ export default {
 
   <Header />
   <Main />
-  <Footer />
 
 </template>
 

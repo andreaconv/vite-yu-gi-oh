@@ -23,8 +23,6 @@ export default {
     height: 100px;
     padding: 2rem;
     @include centerFlex('vertical');
-    // debug
-    border-bottom: 1px solid black;
 
     img{
       margin-right: 1rem;

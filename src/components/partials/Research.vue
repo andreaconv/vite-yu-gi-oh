@@ -7,7 +7,7 @@ export default {
 
 <template>
 
-  <h3>Found 39 cards</h3>
+  <h3 class="mb-0">Found 39 cards</h3>
   
 </template>
 

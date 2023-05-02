@@ -25,6 +25,7 @@ export default {
     @include centerFlex('vertical');
 
     img{
+      height: 100%;
       margin-right: 1rem;
     }
   }

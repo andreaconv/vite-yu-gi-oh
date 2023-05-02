@@ -1,25 +1,44 @@
 <script>
 import Search from './partials/Search.vue';
 import Research from './partials/Research.vue';
+import Card from './partials/Card.vue';
+import {store} from '../data/store';
 
 export default {
   name: 'Main-wrapper',
   components: {
     Search,
     Research,
+    Card,
+  },
+  data(){
+    return{
+      store,
+    }
   },
 }
 </script>
 
 <template>
   <div class="my-main">
-    <div class="container">
+    <div class="container p-0">
 
       <Search />
 
       <div class="main-wrapper p-5">
 
         <Research />
+
+        <div class="cards-container">
+
+          <Card
+            v-for="card in store.resultArray"
+            :key="card.id" 
+            :image="card.card_images[0]"
+            :name="card.name"
+            :type="card.archetype"/>
+
+        </div>
 
       </div>
 
@@ -32,14 +51,18 @@ export default {
 @use '../scss/partials/vars' as *;
 
 .my-main{
-  height: 100vh;
   background-color: $primary-color;
 
   .container{
-    height: 100%;
     .main-wrapper{
-      height: 100%;
-      background-color: white
+      background-color: white;
+
+      .cards-container{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+      }
 
     }
   }

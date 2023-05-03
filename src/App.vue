@@ -19,8 +19,8 @@ export default {
     getApi(){
       axios.get(store.apiUrl, {
         params: {
-          num: 10,
-          offset: 0,
+          num: store.cardNumber,
+          offset: store.cardOffset,
         }
       })
       .then(result => {

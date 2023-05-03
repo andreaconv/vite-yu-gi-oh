@@ -36,7 +36,7 @@ export default {
             :key="card.id" 
             :image="card.card_images[0]"
             :name="card.name"
-            :type="card.archetype || card.type"/>
+            :type="card.type"/>
 
         </div>
 

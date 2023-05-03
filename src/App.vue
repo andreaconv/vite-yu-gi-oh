@@ -25,9 +25,8 @@ export default {
       })
       .then(result => {
         store.resultArray = result.data.data;
-        console.log(store.resultArray)
       })
-    }
+    },
   },
   mounted(){
     this.getApi();

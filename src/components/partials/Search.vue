@@ -1,13 +1,20 @@
 <script>
+import { store } from '../../data/store'
+
 export default {
   name: 'Search',
-  
+  data(){
+    return{
+      store
+    }
+  }
 }
 </script>
 
 <template>
   <select class="m-3" name="" id="">
-    <option value="">Alien</option>
+    <option value="" selected>Seleziona il filtro</option>
+    <option v-for="(type) in store.typeArray" :key="type" value="type">{{ type }}</option>
   </select>
 </template>
 

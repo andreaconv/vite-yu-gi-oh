@@ -16,6 +16,11 @@ export default {
       store,
     }
   },
+  methods: {
+    searchCardsFilter(){
+      this.$emit('startFilterCards')
+    }
+  }
 }
 </script>
 
@@ -23,7 +28,7 @@ export default {
   <div class="my-main">
     <div class="container p-0">
 
-      <Search />
+      <Search @searchCards="searchCardsFilter" />
 
       <div class="main-wrapper p-5">
 

@@ -21,15 +21,31 @@ export default {
         params: {
           num: store.cardNumber,
           offset: store.cardOffset,
+          type: store.optionType,
         }
       })
       .then(result => {
         store.resultArray = result.data.data;
       })
     },
+    getAllCards(){
+      axios.get(store.apiUrl)
+      .then(result => {
+        const cards = result.data.data;
+        cards.forEach(card => {
+          if (!store.typeArray.includes(card.type)) {
+            store.typeArray.push(card.type)
+          }
+        });
+      })
+    }
   },
   mounted(){
     this.getApi();
+    this.getAllCards();    
+  },
+  computed(){
+    // console.log(this.store.optionType)
   }
 }
 </script>
@@ -37,7 +53,7 @@ export default {
 <template>
 
   <Header />
-  <Main />
+  <Main @startFilterCards="getApi" />
 
 </template>
 

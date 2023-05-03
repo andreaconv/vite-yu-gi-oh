@@ -12,10 +12,11 @@ export default {
 </script>
 
 <template>
-  <select class="m-3" name="" id="">
-    <option value="" selected>Seleziona il filtro</option>
-    <option v-for="(type) in store.typeArray" :key="type" value="type">{{ type }}</option>
+  <select v-model="store.optionType" class="m-3" name="" id="">
+    <option v-for="cardType in store.typeArray" :key="cardType" :value="cardType">{{ cardType }}</option>
   </select>
+  
+  <button @click="$emit('searchCards')" >cerca</button>
 </template>
 
 <style lang="scss" scoped>
